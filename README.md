@@ -1,12 +1,12 @@
 # Sass::Rails::QueryStringAndAnchorFix
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sass/rails/query_string_and_anchor_fix`. To experiment with that code, run `bin/console` for an interactive prompt.
+sass-rails' asset helper functions (font-url, font-path, image-url, image-path, etc.) pass their full argument along to sprockets to look up in the sprockets manifest.  When the argument is a URL that concludes with a query string or an anchor tag, neither sass-rails 3 nor sprockets 2 strips it before looking up the digest.  This results in sprockets not finding the digest, and the non-digest URL is used instead.
 
-TODO: Delete this and the text above, and describe your gem
+This issue occurs in sass-rails < 4, and it is resolved by this gem.  For later versions of sass-rails, this gem is unnecessary.
 
-## Installation
+## Installation / Usage
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile, in the same group as sass-rails:
 
 ```ruby
 gem 'sass-rails-query_string_and_anchor_fix'
@@ -20,10 +20,6 @@ Or install it yourself as:
 
     $ gem install sass-rails-query_string_and_anchor_fix
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -32,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sass-rails-query_string_and_anchor_fix.
+Bug reports and pull requests are welcome on GitHub at https://github.com/on-site/sass-rails-query_string_and_anchor_fix.
 
 ## License
 
