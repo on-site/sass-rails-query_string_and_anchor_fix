@@ -15,7 +15,7 @@ RSpec.describe 'Sass::Rails::Helpers' do
   let(:sprockets_context) { sprockets.context_class.new(*context_args) }
 
   let(:context_args) do
-      [sprockets.index, 'ignored', Pathname.new(File.new(__FILE__))]
+    [sprockets.index, 'ignored', Pathname.new(File.new(__FILE__))]
   end
 
   let(:template) do
@@ -73,10 +73,10 @@ RSpec.describe 'Sass::Rails::Helpers' do
   before(:each) do
     define_sass_config
 
-      sprockets_context.class_eval do
-        include ::Sprockets::Helpers::RailsHelper
-        include ::Sprockets::Helpers::IsolatedHelper
-      end
+    sprockets_context.class_eval do
+      include ::Sprockets::Helpers::RailsHelper
+      include ::Sprockets::Helpers::IsolatedHelper
+    end
 
     configure_sprockets_context
     configure_sprockets
