@@ -49,7 +49,7 @@ RSpec.describe 'Sass::Rails::Helpers' do
 
   def configure_sprockets_context
     allow(sprockets_context).to receive(:asset_environment).and_return(sprockets)
-    %i[compile_assets? digest_assets?].each do |method_name|
+    %w[compile_assets? digest_assets?].each do |method_name|
       allow(sprockets_context).to receive(method_name).and_return(true)
     end
   end

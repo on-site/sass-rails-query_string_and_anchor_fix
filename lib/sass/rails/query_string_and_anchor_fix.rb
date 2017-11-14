@@ -39,7 +39,7 @@ module Sass
         asset
       end
 
-      %i[image video audio javascript stylesheet font].each do |asset_class|
+      %w[image video audio javascript stylesheet font].each do |asset_class|
         # rubocop:disable Style/CommentedKeyword
         class_eval %{
           def #{asset_class}_path_with_correct_handling_of_query_strings_and_anchors(asset)
