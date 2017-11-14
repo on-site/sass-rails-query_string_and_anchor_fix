@@ -9,4 +9,5 @@ gemspec
 
 group :test do
   gem 'appraisal'
+  gem 'simplecov', require: false
 end
