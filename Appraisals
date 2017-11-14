@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 appraise "sass-rails-5.0" do
   gem "sass-rails", "5.0.6"
 end

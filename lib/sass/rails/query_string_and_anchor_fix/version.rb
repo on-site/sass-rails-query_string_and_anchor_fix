@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sass
   module Rails
     module QueryStringAndAnchorFix
