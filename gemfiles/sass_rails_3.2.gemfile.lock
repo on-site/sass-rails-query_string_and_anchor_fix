@@ -2,7 +2,7 @@ PATH
   remote: ..
   specs:
     sass-rails-query_string_and_anchor_fix (0.1.0)
-      sass-rails
+      sass-rails (< 4)
 
 GEM
   remote: https://rubygems.org/
