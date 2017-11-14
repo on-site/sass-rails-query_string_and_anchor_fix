@@ -133,12 +133,40 @@ RSpec.describe 'Sass::Rails::Helpers' do
 
       it { should eq(expected_result) }
     end
+
+    context 'with anchor' do
+      let(:image_css) { 'image-url("my_image.png?version=20171113");' }
+      let(:expected_image_url) { 'url(/v1/assets/my_image-abcdef123456.png?version=20171113);' }
+
+      it { should eq(expected_result) }
+    end
+
+    context 'with query string' do
+      let(:image_css) { 'image-url("my_image.png#iefix");' }
+      let(:expected_image_url) { 'url(/v1/assets/my_image-abcdef123456.png#iefix);' }
+
+      it { should eq(expected_result) }
+    end
   end
 
   describe '#image-path' do
     context 'without anchor or query string' do
       let(:image_css) { 'url(image-path("my_image.png"));' }
       let(:expected_image_url) { 'url("/v1/assets/my_image-abcdef123456.png");' }
+
+      it { should eq(expected_result) }
+    end
+
+    context 'with anchor' do
+      let(:image_css) { 'url(image-path("my_image.png?version=20171113"));' }
+      let(:expected_image_url) { 'url("/v1/assets/my_image-abcdef123456.png?version=20171113");' }
+
+      it { should eq(expected_result) }
+    end
+
+    context 'with query string' do
+      let(:image_css) { 'url(image-path("my_image.png#iefix"));' }
+      let(:expected_image_url) { 'url("/v1/assets/my_image-abcdef123456.png#iefix");' }
 
       it { should eq(expected_result) }
     end
