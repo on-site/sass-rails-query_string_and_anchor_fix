@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'sprockets'
-require 'sass/rails'
+require 'sass/rails/query_string_and_anchor_fix'
 require 'active_support/core_ext/string/starts_ends_with'
 require 'active_support/core_ext/string/strip'
 
